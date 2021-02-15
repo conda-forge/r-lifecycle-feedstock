@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lifecycle_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lifecycle/lifecycle_{{ version }}.tar.gz
-  sha256: 29746e8dee05d4e36f9c612e8c7a903a4f648a36b3b94c9776e518c38a412224
+  sha256: 03334ab213f2ad49a49e184e73f2051e04d35d43f562db903e68243cd2ec0f8e
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -40,10 +40,8 @@ test:
 about:
   home: https://github.com/r-lib/lifecycle
   license: GPL-3
-  summary: Manage the life cycle of your exported functions with shared conventions, documentation badges, and non-invasive deprecation warnings. The 'lifecycle'
-    package defines four development stages (experimental, maturing, stable, and questioning) and three deprecation stages (soft-deprecated, deprecated, and defunct).
-    It makes it easy to insert badges corresponding to these stages in your documentation. Usage of deprecated functions are signalled with increasing levels of non-invasive
-    verbosity.
+  summary: Manage the life cycle of your exported functions with shared conventions, documentation badges, and non-invasive deprecation warnings. The 'lifecycle' package defines four development stages (experimental, maturing, stable, and questioning) and three deprecation stages (soft-deprecated, deprecated, and defunct).
+    It makes it easy to insert badges corresponding to these stages in your documentation. Usage of deprecated functions are signalled with increasing levels of non-invasive verbosity.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
