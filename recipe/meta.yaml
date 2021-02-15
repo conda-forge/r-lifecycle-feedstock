@@ -26,11 +26,11 @@ requirements:
   host:
     - r-base
     - r-glue
-    - r-rlang >=0.4.0
+    - r-rlang >=0.4.10
   run:
     - r-base
     - r-glue
-    - r-rlang >=0.4.0
+    - r-rlang >=0.4.10
 
 test:
   commands:
@@ -39,12 +39,13 @@ test:
 
 about:
   home: https://github.com/r-lib/lifecycle
-  license: GPL-3
+  license: MIT
   summary: Manage the life cycle of your exported functions with shared conventions, documentation badges, and non-invasive deprecation warnings. The 'lifecycle' package defines four development stages (experimental, maturing, stable, and questioning) and three deprecation stages (soft-deprecated, deprecated, and defunct).
     It makes it easy to insert badges corresponding to these stages in your documentation. Usage of deprecated functions are signalled with increasing levels of non-invasive verbosity.
   license_family: GPL3
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
