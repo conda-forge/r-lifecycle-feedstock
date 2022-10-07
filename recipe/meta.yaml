@@ -1,4 +1,4 @@
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lifecycle_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lifecycle/lifecycle_{{ version }}.tar.gz
-  sha256: 7b3f3c8ef9c068c5db396b353d62185d9ed02a69b787c7769d24595769a25a63
+  sha256: 6459fdc3211585c0cdf120427579c12149b02161efe273a64b825c05e9aa69c2
 
 build:
   merge_build_host: true  # [win]
@@ -23,14 +23,17 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-cli >=3.4.0
     - r-glue
-    - r-rlang >=0.4.10
+    - r-rlang >=1.0.6
   run:
     - r-base
+    - r-cli >=3.4.0
     - r-glue
-    - r-rlang >=0.4.10
+    - r-rlang >=1.0.6
 
 test:
   commands:
