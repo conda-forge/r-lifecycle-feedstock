@@ -1,4 +1,4 @@
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/lifecycle_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/lifecycle/lifecycle_{{ version }}.tar.gz
-  sha256: ada4d3c7e84b0c93105e888647c5754219a8334f6e1f82d5afaf83d4855b91cc
+  sha256: 61841e3e6edba056a88355a3f1d6698ab8d5d9cb3c05f2af0ec5a44ab516f8ee
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
